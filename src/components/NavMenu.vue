@@ -30,7 +30,8 @@
               <el-avatar :size="36" :src="circleUrl"></el-avatar>
               <el-dropdown>
                 <span class="el-dropdown-link">
-                  用户名<i class="el-icon-arrow-down el-icon--right"></i>
+                  用户名<span class="ide">达人商务</span>
+                  <i class="el-icon-arrow-down el-icon--right"></i>
                 </span>
                 <el-dropdown-menu slot="dropdown">
                   <el-dropdown-item icon="el-icon-user-solid"
@@ -64,11 +65,30 @@ export default {
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
+      if (key == 1) {
+        this.$router.push("/");
+      } else if (key == 2) {
+        this.$router.push("/kolcs");
+      } else if (key == 3) {
+        this.$router.push("/goods");
+      } else if (key == 4) {
+        this.$router.push("/msgs");
+      } else if (key == 5) {
+        this.$router.push("/forms");
+      }
     },
   },
 };
 </script>
 <style lang="less" scoped>
+.ide {
+  font-weight: bold;
+  color: rgb(2, 211, 2);
+  background: rgba(6, 228, 6, 0.2);
+  margin-left: 4px;
+  padding: 4px;
+  border-radius: 15%;
+}
 .el-menu {
   display: flex;
   align-items: center;
@@ -84,6 +104,9 @@ export default {
 }
 
 .avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .el-dropdown {
     line-height: 0;
     padding-left: 10px;

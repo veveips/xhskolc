@@ -30,27 +30,11 @@
         <div class="content">
           <div class="board">
             <el-breadcrumb separator-class="el-icon-arrow-right">
-              <el-breadcrumb-item>首页</el-breadcrumb-item>
-              <el-breadcrumb-item>活动管理</el-breadcrumb-item>
-              <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-              <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+              <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+              <el-breadcrumb-item>我的工作台</el-breadcrumb-item>
             </el-breadcrumb>
             <el-divider></el-divider>
 
-            <el-select
-              v-model="value2"
-              multiple
-              collapse-tags
-              placeholder="请选择品类信息"
-            >
-              <el-option
-                v-for="item in options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value"
-              >
-              </el-option>
-            </el-select>
           </div>
         </div>
       </el-col>
@@ -62,6 +46,14 @@
 export default {
   name: "Home",
   components: {},
+  methods: {
+    handleOpen(key, keyPath) {
+      console.log(key, keyPath);
+    },
+    handleClose(key, keyPath) {
+      console.log(key, keyPath);
+    },
+  },
   data() {
     return {
       options: [
@@ -94,31 +86,4 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.tac {
-  .el-menu-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  .el-menu-vertical-demo {
-    height: calc(100vh - 61px);
-  }
-}
-.content {
-  overflow: hidden;
-  .board {
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin: 10px;
-    border-radius: 4px;
-    height: calc(100vh - 81px);
-    .el-breadcrumb {
-      padding: 12px;
-    }
-    .el-divider {
-      margin: 0;
-    }
-  }
-}
 </style>
