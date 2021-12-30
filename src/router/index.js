@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+// import Home from '../views/Home.vue'
+import ProductManagenment from '../views/ProductManagement'
 
 Vue.use(VueRouter)
 
 const routes = [{
     path: '/',
-    name: 'Home',
-    component: Home,
+    name: 'ProductManagenment',
+    component: ProductManagenment,
     meta: {
       title: '首页 - 小红书达人管理系统'
     }
