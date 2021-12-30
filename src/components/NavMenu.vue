@@ -78,12 +78,9 @@ export default {
     align-items: center;
   }
 }
-
 .menu2 {
-  .el-menu-item {
-    display: flex;
-    flex-direction: row;
-  }
+  display: flex;
+  justify-content: flex-end;
 }
 
 .avatar {
