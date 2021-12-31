@@ -98,7 +98,7 @@ export default {
   align-items: center;
   .el-dropdown {
     line-height: 0;
-    padding-left: 10px;
+    padding-left: 5px;
   }
 }
 .el-dropdown-menu {

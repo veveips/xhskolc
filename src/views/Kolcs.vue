@@ -4,7 +4,7 @@
       <el-col :span="2">
         <LeftNav :span="2"></LeftNav>
       </el-col>
-      <el-col :span="22">
+      <el-col :span="22" v-if="activeIndex == 1">
         <div class="content">
           <div class="board">
             <el-breadcrumb separator-class="el-icon-arrow-right">
@@ -84,6 +84,42 @@
           </div>
         </div>
       </el-col>
+
+      <el-col :span="22" v-if="activeIndex == 2">
+        <div class="content">
+          <div class="board">
+            <el-breadcrumb separator-class="el-icon-arrow-right">
+              <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+              <el-breadcrumb-item>达人管理</el-breadcrumb-item>
+              <el-breadcrumb-item>导航二</el-breadcrumb-item>
+            </el-breadcrumb>
+            <el-divider></el-divider>
+            <el-button @click="UploadExcel" type="primary"
+              ><i class="el-icon-edit-outline"></i>导入Excel表格</el-button
+            >
+            <el-divider></el-divider>
+
+            <el-steps :active="2" align-center>
+              <el-step
+                title="步骤1"
+                description="这是一段很长很长很长的描述性文字"
+              ></el-step>
+              <el-step
+                title="步骤2"
+                description="这是一段很长很长很长的描述性文字"
+              ></el-step>
+              <el-step
+                title="步骤3"
+                description="这是一段很长很长很长的描述性文字"
+              ></el-step>
+              <el-step
+                title="步骤4"
+                description="这是一段很长很长很长的描述性文字"
+              ></el-step>
+            </el-steps>
+          </div>
+        </div>
+      </el-col>
     </el-row>
   </div>
 </template>
@@ -107,11 +143,13 @@ export default {
   },
   data() {
     return {
+      activeIndex: 2,
       activeName: "first",
       tableData: [],
     };
   },
   methods: {
+    UploadExcel() {},
     handleClick(tab, event) {
       console.log(tab, event);
     },
