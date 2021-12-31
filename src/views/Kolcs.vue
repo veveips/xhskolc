@@ -12,27 +12,18 @@
               <el-breadcrumb-item>达人管理</el-breadcrumb-item>
             </el-breadcrumb>
             <el-divider></el-divider>
+            <Kolcsearch style="margin-top: 15px"></Kolcsearch>
             <el-tabs
               ref="tabs"
               class="el-tabs"
               v-model="activeName"
               @tab-click="handleClick"
             >
-              <el-tab-pane label="线索" name="first"
-                ><Kolcsearch></Kolcsearch
-              ></el-tab-pane>
-              <el-tab-pane label="已建联" name="second"
-                ><Kolcsearch></Kolcsearch
-              ></el-tab-pane>
-              <el-tab-pane label="已申样" name="third"
-                ><Kolcsearch></Kolcsearch
-              ></el-tab-pane>
-              <el-tab-pane label="已提交" name="fourth"
-                ><Kolcsearch></Kolcsearch
-              ></el-tab-pane>
-              <el-tab-pane label="已失效" name="five"
-                ><Kolcsearch></Kolcsearch
-              ></el-tab-pane>
+              <el-tab-pane label="线索" name="first"></el-tab-pane>
+              <el-tab-pane label="已建联" name="second"></el-tab-pane>
+              <el-tab-pane label="已申样" name="third"></el-tab-pane>
+              <el-tab-pane label="已提交" name="fourth"></el-tab-pane>
+              <el-tab-pane label="已失效" name="five"></el-tab-pane>
             </el-tabs>
 
             <el-divider></el-divider>

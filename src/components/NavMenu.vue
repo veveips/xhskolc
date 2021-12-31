@@ -20,11 +20,7 @@
         </el-menu>
       </el-col>
       <el-col :span="3">
-        <el-menu
-          :default-active="activeIndex"
-          class="el-menu-demo menu2"
-          mode="horizontal"
-        >
+        <el-menu class="el-menu-demo menu2" mode="horizontal">
           <el-menu-item
             ><div class="avatar">
               <el-avatar :size="36" :src="circleUrl"></el-avatar>
@@ -59,8 +55,11 @@ export default {
       circleUrl:
         "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png",
       activeIndex: "1",
-      activeIndex2: "1",
     };
+  },
+  mounted() {
+    let curnav = window.location.pathname;
+    console.log(curnav);
   },
   methods: {
     handleSelect(key, keyPath) {
