@@ -6,11 +6,11 @@
         <el-input v-model="input" placeholder="请输入达人昵称"></el-input>
       </el-col>
       <el-col class="search" :span="6">
-        <span>小红书号</span>
+        <span>平台账号</span>
         <el-input v-model="input" placeholder="请输入达人昵称"></el-input>
       </el-col>
       <el-col class="search" :span="6">
-        <span>平台</span>
+        <span>选择平台</span>
         <el-select style="width: 100%" v-model="value" placeholder="请选择">
           <el-option
             v-for="item in options"
@@ -50,7 +50,8 @@
         </div>
       </el-col>
 
-      <el-col class="search" :span="12">
+      <el-col class="search" :span="6">
+        <el-button type="success" style="width: 100%">清除过滤信息</el-button>
         <el-button type="primary" style="width: 100%">查询/过滤达人</el-button>
       </el-col>
     </el-row>
