@@ -3,7 +3,7 @@
     <el-row>
       <el-col :span="21">
         <el-menu
-          :default-active="activeIndex"
+          :default-active="activeName"
           class="el-menu-demo"
           mode="horizontal"
           @select="handleSelect"
@@ -12,11 +12,11 @@
             ><a class="home" href="/"
               ><img style="height: 28px" src="../assets/xhs.png" alt="" /></a
           ></el-menu-item>
-          <el-menu-item index="1">我的工作台</el-menu-item>
-          <el-menu-item index="2">达人管理</el-menu-item>
-          <el-menu-item index="3">商品管理</el-menu-item>
-          <el-menu-item index="4">消息通知</el-menu-item>
-          <el-menu-item index="5">订单管理</el-menu-item>
+          <el-menu-item index="/">我的工作台</el-menu-item>
+          <el-menu-item index="/kolcs">达人管理</el-menu-item>
+          <el-menu-item index="/goods">商品管理</el-menu-item>
+          <el-menu-item index="/msgs">消息通知</el-menu-item>
+          <el-menu-item index="/forms">订单管理</el-menu-item>
         </el-menu>
       </el-col>
       <el-col :span="3">
@@ -54,7 +54,7 @@ export default {
     return {
       circleUrl:
         "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png",
-      activeIndex: "1",
+      activeName: "/",
     };
   },
   mounted() {
@@ -64,17 +64,7 @@ export default {
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
-      if (key == 1) {
-        this.$router.push("/");
-      } else if (key == 2) {
-        this.$router.push("/kolcs");
-      } else if (key == 3) {
-        this.$router.push("/goods");
-      } else if (key == 4) {
-        this.$router.push("/msgs");
-      } else if (key == 5) {
-        this.$router.push("/forms");
-      }
+      this.$router.push("/");
     },
   },
 };
