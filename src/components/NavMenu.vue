@@ -59,12 +59,12 @@ export default {
   },
   mounted() {
     let curnav = window.location.pathname;
-    console.log(curnav);
+    this.activeName = curnav;
   },
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
-      this.$router.push("/");
+      this.$router.push(key);
     },
   },
 };
