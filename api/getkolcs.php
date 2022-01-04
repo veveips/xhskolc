@@ -1,10 +1,11 @@
 <?php
-header('Access-Control-Allow-Origin:*');
+header("Access-Control-Allow-Origin: *");
+header('content-type:text/html;charset=utf-8;multipart/from-data');
 $r = [];
 for ($i = 0; $i < 20; $i++) {
     array_push($r, array(
-        "id" => "1",
-        "name" => "达人昵称1",
+        "id" => $i,
+        "name" => "达人昵称" . $i,
         "cates" => "母婴宠物、美妆护肤、户外运动",
         "infos" => "场均销售额：20w、直播观看人数7.2w、直播带货场次8次",
         "brief" => "👉直播时间：全天24小时不间断直播，宝宝们赶紧关注我！",

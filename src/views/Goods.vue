@@ -1,15 +1,12 @@
 <template>
   <div>
-    <el-row class="tac">
-      <el-col :span="2">
-        <LeftNav :span="2"></LeftNav>
-      </el-col>
-      <el-col :span="22">
+    <el-tabs tab-position="left" class="tabheader">
+      <el-tab-pane label="商品列表">
         <div class="content">
           <div class="board">
             <el-breadcrumb separator-class="el-icon-arrow-right" inline="true">
-              <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
               <el-breadcrumb-item>商品管理</el-breadcrumb-item>
+              <el-breadcrumb-item>商品列表</el-breadcrumb-item>
             </el-breadcrumb>
             <el-divider></el-divider>
             <el-form
@@ -134,19 +131,18 @@
               </el-tabs>
             </div>
           </div>
-        </div></el-col
-      ></el-row
-    >
+        </div></el-tab-pane
+      >
+      <el-tab-pane label="商品录入">商品录入</el-tab-pane>
+      <el-tab-pane label="匹配达人">匹配达人</el-tab-pane>
+    </el-tabs>
   </div>
 </template>
 
 <script>
-import LeftNav from "../components/LeftNav.vue";
 export default {
   name: "Goods",
-  components: {
-    LeftNav,
-  },
+  components: {},
   data() {
     return {
       activeName: "douyin",

@@ -26,17 +26,13 @@ export default {
 body {
   margin: 0;
 }
-.tac {
-  .el-menu-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  .el-menu-vertical-demo {
-    height: calc(100vh - 61px);
-  }
+.el-table .warning-row {
+  color: rgb(250, 106, 106);
 }
+.tabheader {
+  height: calc(100vh - 61px);
+}
+
 .content {
   overflow: hidden;
   .board {

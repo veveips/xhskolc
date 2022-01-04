@@ -1,21 +1,15 @@
 <template>
   <div>
-    <el-row class="tac">
-      <el-col :span="2">
-        <LeftNav :span="2"></LeftNav>
-      </el-col>
-      <el-col :span="22">
-        <div class="content">
-          <div class="board"></div></div></el-col
-    ></el-row>
+    <el-tabs tab-position="left" class="tabheader">
+      <el-tab-pane label="订单列表">订单列表</el-tab-pane>
+      <el-tab-pane label="录入订单">录入订单</el-tab-pane>
+    </el-tabs>
   </div>
 </template>
 
 <script>
-import LeftNav from "../components/LeftNav.vue";
 export default {
   components: {
-    LeftNav,
   },
 };
 </script>

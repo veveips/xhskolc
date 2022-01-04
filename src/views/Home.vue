@@ -12,9 +12,12 @@
             <div class="user">
               <div class="user1">
                 <el-avatar :size="50" :src="circleUrl"></el-avatar>
-                <div class="user2">
-                  <p>Hello! 用户名<span>欢迎回来！</span></p>
-                  <p><i class="el-icon-s-custom"></i>公司组织</p>
+                <div v-if="login.name == undefined" class="user2">
+                  <p>尚未登录</p>
+                </div>
+                <div v-if="login.name != undefined" class="user2">
+                  <p>Hello! {{ login.name }}<span>欢迎回来！</span></p>
+                  <p><i class="el-icon-s-custom"></i>{{ login.company }}</p>
                 </div>
               </div>
               <div class="bg"></div>
@@ -79,9 +82,25 @@
 </template>
 
 <script>
+import qs from "qs";
 export default {
   name: "Home",
   components: {},
+  mounted() {
+    let _this = this;
+    this.$axios
+      .post(
+        "/app",
+        qs.stringify({
+          action: "getlogin",
+        })
+      )
+      .then(function (e) {
+        console.log(e.data);
+        _this.login.name = e.data.name;
+        _this.login.company = e.data.company;
+      });
+  },
   methods: {
     handleOpen(key, keyPath) {
       console.log(key, keyPath);
@@ -92,6 +111,7 @@ export default {
   },
   data() {
     return {
+      login: { name: undefined, company: undefined },
       circleUrl:
         "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png",
     };
