@@ -208,45 +208,6 @@ export default {
     };
   },
   methods: {
-    async tianbiao() {
-      let xhsdata = {
-        d: {
-          cvs: {
-            i: 200662025,
-            t: "rEzJN6h",
-            s: 201652329,
-            acc: "tAXWUhA6meaGYvZwjzZaDigMC1CBVZUs",
-            r: "http://f45s7orn6nq1ftav.mikecrm.com/rEzJN6h",
-            fc: "55f3AC5pRS2U55u0Fe",
-            c: {
-              cp: {
-                206199405: "小红书昵称",
-                206199406: "小红书主页",
-                206199407: "小红书粉丝",
-                206199408: "小红书点赞",
-                206199409: "小红书类型",
-                206199410: "小红书微信",
-                206199411: "小红书电话",
-                206199412: "小红书ID",
-                206199413: "小红书性别",
-                206199414: "小红书价格",
-                206199415: "小红书是否授权",
-                206199416: "小红书地址",
-                206199417: "小红书kpl",
-              },
-            },
-          },
-        },
-      };
-      await this.$axios
-        .post(
-          "http://f45s7orn6nq1ftav.mikecrm.com/handler/web/form_runtime/handleSubmit.php",
-          xhsdata
-        )
-        .then(function (e) {
-          console.log(e.data);
-        });
-    },
     tableRowClassName({ row }) {
       if (row.state == "上传失败") {
         return "warning-row";
