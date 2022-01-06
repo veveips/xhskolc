@@ -155,10 +155,7 @@
       <el-tab-pane label="发布表单">发布表单</el-tab-pane>
       <el-tab-pane label="表单数据">表单数据</el-tab-pane>
       <el-tab-pane label="录入表单">录入表单</el-tab-pane>
-      <el-tab-pane label="匹配达人"
-        >匹配达人
-        <el-button @click="tianbiao">填表</el-button>
-      </el-tab-pane>
+      <el-tab-pane label="匹配达人">匹配达人 </el-tab-pane>
     </el-tabs>
   </div>
 </template>
